@@ -1,0 +1,184 @@
+@import "./_var.scss";
+
+.cards-container {
+  width: 100%;
+}
+
+.desktop-card {
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  transform: scale(0.6);
+
+  &:hover .card-positioner {
+    margin-left: 0px;
+  }
+  &:hover .card-positioner .card-main button {
+    left: 50%;
+  }
+
+  &:hover .mock-up {
+    background-size: 100%;
+    box-shadow: 7px 11px 27px var(--space-sm) rgba(15, 39, 62, 0.25);
+  }
+
+  & .mock-up {
+    width: 800px;
+    height: 460px;
+    border-radius: var(--spacing-2xl, 24px);
+    background: grey;
+    background-repeat: no-repeat;
+    box-shadow: 7px 11px 27px var(--space-md) rgba(15, 39, 62, 0.25);
+    z-index: 1;
+    background-position: center;
+    border: solid 12px;
+    border-color: var(--p-main);
+
+    transition: all 0.8s ease-in-out;
+  }
+  & .card-positioner {
+    display: flex;
+    padding-top: var(--space-7xl);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-left: -300px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+
+    & .card-main {
+      position: relative;
+      display: flex;
+      width: 470px;
+      height: 380px;
+      padding: var(--space-xl) var(--space-6xl);
+      align-items: flex-end;
+      gap: var(--space-sm);
+      border-radius: var(--space-none) var(--space-xl) var(--space-xl)
+        var(--space-none);
+      background: var(--p-main);
+      transition: all 0.8s ease-in-out;
+
+      & .content-position {
+        display: flex;
+        padding: var(--space-6xl) var(--space-none);
+        flex-direction: column;
+        align-items: flex-start;
+
+        & .card-content {
+          display: flex;
+          padding: var(--space-none);
+          align-items: flex-start;
+          gap: var(--spacing-xl, 20px);
+
+          & .description-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--space-xl);
+
+            & .description {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-items: flex-start;
+              gap: var(--space-lg);
+
+              & .title {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                color: var(--white-main);
+              }
+
+              & .story-telling {
+                display: flex;
+                align-items: flex-start;
+                color: var(--white-500);
+              }
+            }
+            & .date {
+              color: var(--white-300);
+            }
+          }
+
+          & .skills-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            gap: var(--space-2xl);
+            padding-top: var(--space-xs);
+            width: 100%;
+
+            & .tag {
+              display: flex;
+              width: var(--space-12xl);
+              height: var(--space-2xl);
+              padding: var(--space-xs) var(--space-lg);
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              border-radius: 27px;
+              border: 1px solid var(--white-500);
+              & span {
+                color: var(--white-500);
+              }
+            }
+
+            & .skills-list {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-items: flex-start;
+              gap: 10px;
+
+              & .skill {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                color: var(--white-500);
+
+                & img {
+                  width: 70%;
+                  height: 70%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      & button {
+        all: unset;
+        color: var(--white-main);
+        display: flex;
+        width: 194px;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 25px;
+        background: var(--p-dark);
+
+        cursor: pointer;
+
+        position: absolute;
+        left: -50%;
+        bottom: -6%;
+        translate: -50%;
+        transition: all 0.7s ease-in-out;
+
+        &:hover {
+          background: var(--p-light);
+          color: var(--g-700);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
